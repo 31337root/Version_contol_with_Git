@@ -1,0 +1,19 @@
+*** Configuration files ***
+
+Like many tools, Git supports a hierarchy of configuration files. In decreasing precedence they are:
+
+/// .git/config ///
+Repository-specific configuration settings manipulated  with the --file option or by default. These settings hace the highest precedence.
+
+/// ~/.gitconfig ///
+User-specific configuration settings manipulated with the --global-option.
+
+/// /etc/gitconfig
+Systems-wide configuration settings manipulated with the --system option if you have proper Unix file write permissions on it. These settings have the lowest precedence. Depending on your actual installation, the system settings  file might be somewhere else (perhaps in /usr/local/etc/gitconfig), or may be entirely absent.
+
+--- $ git config -l ---
+List the settings of alll the variables collectively found in the complete set of configuration files.
+
+--- --unset --
+Use the --unset toption to remove a setting.
+	$ git config --unset --global user.email

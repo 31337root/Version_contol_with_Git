@@ -1,0 +1,6 @@
+*** Configurin an Alias ***
+
+If there is a common but complex Git command that you type frequently, consider setting up simple Git alias for it
+
+	$git config --global alias.show-graph \
+		`log --graph --abbrev-commit --pretty=oneline`
