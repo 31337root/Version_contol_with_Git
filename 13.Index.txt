@@ -1,0 +1,16 @@
+*** Index ***
+The index is a temporary and dynamic binady file that describes the directory
+structure of the entire repository. More specifically, the index captures a 
+version of the project's overall structure at some moment in time.
+The project's state could be represented by a commit and a tree from any point
+in the project's history, or it could be a future state toward which you are
+actively developing.
+
+-------------------->
+	Here's how it works. As the developer, you execute Git commands to stage
+	changes in the index. Changes usually add, delete, or edit some file
+	or set of files. The index records and retains those chanfes, kepping
+	them safe until you are ready to commit them. You can also remove or 
+	replace changes in the index. Thus, the index allows a gradual 
+	transition, usually guided by you, from one complex repository state to
+	another, presumable better state.

@@ -1,0 +1,6 @@
+*** Repositories ***
+A Git repository is simply a database containing all the information needed to 
+retain and manage the revisions and history of a project. In Git, as with most 
+version control systems, a repository retains a complete copy of the entire 
+project throughout its life with which to work.
+

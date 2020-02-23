@@ -1,0 +1,9 @@
+*** Content-addressable names ***
+
+The Git object store is organized and implemented as a content-addressable
+storage syztem. Specifically, each object in the object store has a unique
+name produced by applying SHA1 to the contents of the object, yielding and SHA1
+hash value. Because the complete contents of an object contribute to the hash 
+value and the hash value is believed to be effectively unique to that particular
+content, the SHA1 hash is sufficient index or name for that object in the object
+database. Any tiny  hange to a file xauses the SHA1 hash to change, causing the new version of the file to be indexed separately.

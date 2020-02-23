@@ -1,0 +1,22 @@
+*** File classifications in Git ***
+
+Git classifies your files into three groups: tracked, ignored, and untracked.
+
+	Tracked
+		A tracked file is any file already in the repository or any file
+		that is staged in the index. To add a new file to this group,
+		run git add somefile.
+	Ignored
+		An ignored file most be explicitly declared invisible or ignored
+		in the repository even tgough it may be present within your
+		working directory. A software project tends to have foog number
+		of ignored files. Common ignored files include temporary and
+		scratch files, personal notes, compiler output, and most files
+		generated automatically during a build. Git maintains a default
+		list of files to ignore, and oy can configura your repository
+		to recognize others.
+	Untracked
+		An untracked file is any file not found in either of the
+		previous two categories. Git considers the entire set of files
+		in your working directory and subtracts both the tracked files
+		and ignored files to yeild what is untracked.
