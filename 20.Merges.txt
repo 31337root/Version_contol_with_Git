@@ -1,0 +1,49 @@
+*** Merges ***
+
+Git is a distributed version control system (DVCS). It allows, for example, a
+developer in Japan and another in New Jersey to make and recor changegs
+independently, and it permits the two developers to combine their changes at
+any time, all without a central repository.
+
+A merge unifies two or more commit history branches. Most often, a merge
+unifies just two branches, although Git supports a merge of three, four or more
+branches at the same time.
+
+When modifications in one branch do not conflict with modifications found in
+another branch, Git computes a merge result and creates a new commit that
+represents the new, unified state. But when branches conflict, which occurs
+whenever changes compete to alter the same line of the same file, Git does not
+resolve the dispute. Instead, Git marks such contentious changes as "unmerged" 
+in the index and leaves reconciliation up to you, the developer. When Git
+cannot merge auromatically, it's also up to you to make the final commit once
+all conflicts are resolved.
+
+--- Merge examples ---
+
+To merge other_branch into branch, you sould check out the taret branch and 
+merge the other branches into it, like this:
+	$ git checkout branch
+	$ git merge other_branch
+
+--- Aborting or restarting a merge ---
+
+If you startt a mergeg operation but then decide for some reasoon that you don't
+want to complete it, Git provides an easy way to abort the opration. Prior to
+executing the final git commit oon the merge commit, use:
+	$ git reset --hard HEAD
+This command restores both your working directory and the index to the state 
+immediately prior to the gitt merge command.
+
+If you want to abort ot discard the merge after it has finished (That is, after
+it's introduced a new merge commit), use the command:
+	$ git reset --hard ORIG_HEAD
+Prior to beginning the merge operation, Git saves your original branch HEAD in
+the ORIG_HEAD ref for just this sort of purpose.
+
+You should be very careful here, though. If you did not start the merge with a
+clean working directory and index, you could get in troouble and lose any 
+uncommitted changges you have in your directory.
+
+You can initiate a git merge request with a dirty working directory, but if you execute git reset --hard then your dirty state prior to the merge is not fully
+restored. Instead, the reset loses your dirty state in the working directory
+area. In other words, you requested a --hard reset to the HEAD state!

@@ -1,0 +1,18 @@
+*** Commits ***
+
+In Git, a commit is used to record changes to a repository.
+
+Git commit operates in a unique way.
+
+Whean a commit occurs, Git records a snapshot of the index and places that 
+snapshot in the object store. This snapshot does not contin a copy of every
+file and directory in the index, because such a strategy would require enormous
+and pohibitive amounts of storage. Inatead, Git compares the current state of 
+the index tot he previous snapshot and so derives a list of affectd files and
+directories. Git creates new blobs for any file that has changed and new trees 
+for any directory that has changed, and it reuses any blob or tree object that
+has not changed.
+
+--- Viewing old commits ---
+
+The mrimary command to sohw the history of commits is [git log].

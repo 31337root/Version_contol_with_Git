@@ -1,0 +1,7 @@
+*** Creating and checking out a new branch ***
+
+Another fairly common scenario happens when you want to both create a new branch and simultaneously switch to it as well. Git provides a shitcut for this with the -b -new-branch option.
+
+Is exactly the same as the two-command sequence:
+	git branch new-branch start-point
+	git checkout new-branch

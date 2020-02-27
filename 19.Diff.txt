@@ -1,0 +1,33 @@
+*** Diff ***
+
+git diff
+	git diff shows the difference bteween your working directory and the 
+	index. It exposes what is dirty in your working directory and is thus
+	a candidate to stage for your next commit. This command does now reveal
+	differences betwrrn what's in your index and what's permanently stored 
+	in the repository (Not to mention remote repositories you might be 
+	working with).
+git diff commit
+	This form summarizes the differences between your working directory and
+	the given commit. Common variants of this command name HEAD or a 	
+	particular branch name as the commit.
+gir diff --cached commit
+	This command shows the differences between the staged changes in the 
+	index and the given commit. A common commit for the comparison -- and 
+	the default if no commit is specified -- us HEAD. With HEAD, this 
+	command shows you how your next commit will alter the current branch.
+git diff commit1 commit2
+	IF you specify two arbitrary commits, the command displays the 
+	differences between the two. This command ignores the index and the
+	working directory, and it is the workhorse for arbitrary comparisons
+	between two trees that are already in your object store.
+
+You can compare any two commits or trees. What's being compared need not have a
+direct or even an indirect parent-child relationship. I you don't supply a tree
+object or two, the git diff compares implied sources, sich as your index or
+working directory.
+
+Each revision has its own tree, but Git doesn't require those to generate the
+diff; Git can operate directly on snapshots of the complete state at each of the
+two versions. This simple difference in storage systems is one of the most 
+important reasons that Git is so much gaster than others RCSs.

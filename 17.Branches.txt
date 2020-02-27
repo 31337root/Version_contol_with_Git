@@ -1,0 +1,61 @@
+*** Branches ***
+
+A branch is the fundamental means of launching separate line of development
+within a software project. Branch is a split from a kind of unified, primal
+state, allowing development to continue in multiple directions simultaneously 
+and, potentially, to produce different versions of the project. Often, a branch
+is reconciled and merge with other brsnches to reunite disparate efforts.
+
+Git, just like the Unix shel, supports wildcards. You can select all bug 
+branches at once with a clever and familiar shirthand.
+
+	git show-branch 'bug/*'
+
+--- Dos and dont's in branch names ---
+
+Branch names must conform to a few simple rules.
+
+	- You can use the forward slash (/) to create a hierarchical name scheme
+	However, the name cannot end with slash.
+	- The name cannot start with a minus sign (-).
+	- No slash-separated component vcan begin with a dof (.). A branch name
+	such as feature/.new is invalid.
+	- The name cannot containt two consecutive dots (..) anywhere.
+	- Further, the name cannot contain:
+		- Any space or other whitespace character-
+		- A character that has special meaning to Git, including the 
+		tilde (~), caret (^), colon (:), question mark (?), asterisk (*)
+		, and open bracket ([).
+		- And ASCII control character, which is any byte with a value
+		lower than \040 octal, or the DEL character (\177 octal).
+
+--- Creating brnches ---
+
+A new branch is based upon an existing commit within the repository. It is 
+entirely up to you to determine and specify which commit to use as the start
+of the new branch. Git supportts an arbitratily complex branching structure,
+including branching branches and forking multiple branches from the same commit.
+
+The lifetime of a branch is, again, your decision. A branch may be short lived or log lived. Agiven branch name bay be added and deleted multiple times over the
+lifetime of the repository.
+
+Once you have indentified the commit from which a branch should start, simply 
+use the git branch command. Thus, to create a new branch off the HEAD of your 
+current breanch for the puposes of fixing problem report #1138, you might use:
+	$ git branch prs/pr-1138
+the basic form of the command is
+	git branch branch [startgin-commit] 
+When no starting-commit is specified, the default is the version committed most
+recently on the current branch. In other words, the default is to start a new 
+branch at the point where you're working right now.
+
+--- Checking out branches ---
+
+As mentioned earlier in this capter, your working directory can reflect only one
+branch at a time. To start working on a different branch, issue the 
+	git checkout
+makes the branch the new, current working branch. It changes your working tree 
+file and directory structure to match the state of the given branch. However,
+as you'll see, Git builds in safeguards to keep you from losing data you haven't
+yet committed.
+
